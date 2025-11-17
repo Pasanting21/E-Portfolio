@@ -4,72 +4,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Generate PDF Prototype</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-    <link rel="stylesheet" href="styles.css">
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            /* stack header, form, footer vertically */
+            justify-content: space-between;
+            /* push header to top, footer to bottom */
+            align-items: center;
+            background: linear-gradient(-45deg, #f3f4f6, #e0f2fe, #dbeafe, #fef3c7);
+            background-size: 600% 600%;
+            animation: gradientMove 30s ease infinite;
+            padding: 30px;
+            /* add breathing room around content */
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Header styling */
+        #header {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        #header h1 {
+            font-size: 20px;
+            color: #1f2937;
+        }
+
+        /* Link styling */
+        #link {
+            margin-bottom: 10px;
+        }
+
+        #link a {
+            text-decoration: none;
+            color: #2563eb;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        #link a:hover {
+            color: #1d4ed8;
+        }
+
+        /* Form styling */
+        form {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            transition: transform 0.3s ease;
+            margin: 20px 0;
+            /* gap above and below form */
+        }
+
+        form:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 24px;
+            color: #1f2937;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 12px 14px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            background-color: #f9fafb;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #2563eb;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+        }
+
+        h6 {
+            text-align: center;
+            color: #6b7280;
+            font-size: 12px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+
+        /* Footer styling */
+        #footer {
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        #footer h2 {
+            font-size: 16px;
+            color: #374151;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="bg-animated">
-        <div class="bg-shape bg-shape1"></div>
-        <div class="bg-shape bg-shape2"></div>
-        <div class="bg-shape bg-shape3"></div>
+    <div id="header">
+        <h1>Hi, this is just a PROTOTYPE of the original PDF Generator that I made because, i still don't know how
+            to open PHP and publish it on Github.</h1>
     </div>
-    <header>
-        <h1>My Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contacts</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="about">
-        <img src="Tisoy1.jpg" alt="Profile Picture" width="150">
-        <h2>About Me</h2>
-        <p>Hi! I’m Gennilo Dave G. Pasanting, 17 years old, born on November 3, 2008. I’m into volleyball, gaming, and
-            pretty much anything that keeps me physically active. I also enjoy drawing, playing the guitar, and
-            singing—even if I’m not that great at it, I still have fun doing it. I used to be really into coding,
-            especially back in Grade 11 when it first caught my interest, but now that I’m in Grade 12, the passion’s
-            faded a bit. Still, I like to explore different things and just go with whatever keeps life interesting.</p>
-    </section>
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>PDF Generator</h3>
-            <p>This project is a clean, functional web application that generates well-formatted PDF reports based on user input. Users fill out a simple form with fields for author, year, product, brand, and a description, which is then processed into a standardized PDF document. It features an intuitive UI, supports custom text content, and is ideal for creating product summaries, research reports, or documentation. The system is extendable for database integration and is built using HTML, CSS, JavaScript, PHP, and TCPDF.</p>
-            <p>If you wanna go see: <a href="PDF-EXPORTER/index.html">Click Here</a> PS: It ain't working properly yet. it only saves the code in your downloads folder. So I just made a PROTOTYPE</p>
-            </p>
-        </div>
-        <div class="project">
-            <h3>Pixelated Website</h3>
-            <p>This project is an interactive web dashboard with a unique pixel art theme, simulating a retro-style interface enhanced by vibrant visuals and a toggleable day/night mode. It features a functional user system with login and account options, personalized welcome messages with avatars, and modular buttons for tasks like tracking assignments, viewing messages, checking grades, and more. Designed for both functionality and visual appeal, it offers a custom pixel art UI for an engaging experience and is built using HTML, CSS, JavaScript, PHP, and pixel art graphics.</p>
-            <p>If you wanna go see: <a href="PixelatedWebsite/index.html">Click Here</a> PS: It downloads the code in your folder still. So I nade a PROTOTYPE</p>
-        </div>
-        <div class="project">
-            <h3>Task Tracker</h3>
-            <p>Task Tracker is a productivity tool designed to help individuals and teams manage daily tasks, prioritize work, set deadlines, and collaborate efficiently. It supports creating, updating, categorizing, and assigning tasks with priority levels and reminders. Users can track progress through statuses like To-Do, In Progress, and Done, organize with tags, and filter or search tasks easily. Features include a visual dashboard (like a Kanban board), real-time notifications, and cross-platform access across web, mobile, or desktop. Built using HTML, CSS, and JavaScript, it streamlines workflow and enhances time management.</p>
-            <p>If you wanna go see: <a href="Task Tracker with Local Storage/index.html">Click Here</a></p>
-        </div>
-        <div class="project">
-            <h3>Tic Tac Toe</h3>
-            <p>Tic-tac-toe, also known as noughts and crosses or Xs and Os, is a classic two-player game played on a 3x3 grid. The objective is to be the first to align three of your symbols (Xs or Os) in a row, either horizontally, vertically, or diagonally. Players take turns marking the grid, aiming to win by getting three of their symbols in a row before the opponent does.</p>
-            <p>If you wanna go see: <a href="TIC TAC TOE/index.html">Click Here</a></p>
-        </div>
-    </section>
-    <section id="contact">
-        <h2>Contacts</h2>
-        <a href="https://www.facebook.com/Pasanting21" class="fa fa-facebook"></a>
-        <a href="https://www.instagram.com/gennilo_dave_pasanting/" class="fa fa-instagram"></a>
-        <a href="https://github.com/Pasanting21" class="fa fa-github"></a>
-    </section>
-    <footer>
-        <p>&copy; 2025 My Portfolio</p>
-    </footer>
 
-    <script src="index.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div id="link">
+        <a href="/index.html">⬅ Back to Portfolio</a>
+    </div>
+
+    <form action="generate.php" method="POST">
+        <h2>Generate PDF Report</h2>
+        <label>Author:</label>
+        <input type="text" name="author" required />
+        <label>Year:</label>
+        <input type="number" name="year" required />
+        <label>Product:</label>
+        <input type="text" name="product" required />
+        <label>Brand:</label>
+        <input type="text" name="brand" required />
+        <label>Paragraph(Info about the product/brand):</label>
+        <textarea name="paragraph" required></textarea>
+        <br>
+        <h6>only click once, don't double click please :></h6>
+        <button type="">Generate PDF</button>
+    </form>
+
+    <div id="footer">
+        <h2>PS. The buttons won't work because like I said it's a PROTOTYPE.</h2>
+    </div>
 </body>
 
 </html>
